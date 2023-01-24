@@ -10,17 +10,16 @@ import javax.annotation.PreDestroy;
 //@Scope("prototype")
 public class ClassicalMusic implements Music{
 
-    @PostConstruct
+    //@PostConstruct
     public void doMyInit() {
         System.out.println("Doing my initialization");
     }
-    @PreDestroy
+    //@PreDestroy
     public void doMyDestroy() {
         System.out.println("Doing my destruction");
     }
-    private String[] classicalMusic= {"Lunnaya Sonata", "Hungarian Rhapsody", "Sappy"};
     @Override
-    public String[] getSong() {
-        return classicalMusic;
+    public String getSong() {
+        return "Lunnaya Sonata";
     }
 }

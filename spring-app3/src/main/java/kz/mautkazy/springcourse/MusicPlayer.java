@@ -15,8 +15,14 @@ public class MusicPlayer {
     private String name;
     @Value("${musicPlayer.volume}")
     private int volume;
-    private Music music1;
-    private Music music2;
+    //private Music music1;
+    //private Music music2;
+
+    private List<Music> musicList = new ArrayList<>();
+
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
+    }
 
     public String getName() {
         return name;
@@ -27,20 +33,13 @@ public class MusicPlayer {
     }
 
     //@Autowired
-    public MusicPlayer(@Qualifier("qpopMusic") Music music1, @Qualifier("classicalMusic") Music music2) {
+    /*public MusicPlayer(@Qualifier("qpopMusic") Music music1, @Qualifier("classicalMusic") Music music2) {
         this.music1 = music1;
         this.music2 = music2;
-    }
-    public String playMusic(MusicGenre musicGenre){
+    }*/
+    public String playMusic(){
         Random rnd = new Random();
-        String result = "";
-        switch (musicGenre) {
-            case Qpop:
-                result = "Playing: " + music1.getSong()[rnd.nextInt(music1.getSong().length)];
-                break;
-            case Classical:
-                result = "Playing: " + music2.getSong()[rnd.nextInt(music2.getSong().length)];
-        }
-        return result;
+
+        return musicList.get(rnd.nextInt(musicList.size())).getSong();
     }
 }

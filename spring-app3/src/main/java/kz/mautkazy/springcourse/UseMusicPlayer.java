@@ -17,17 +17,19 @@ public class UseMusicPlayer {
         /*MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();*/
 
-        /*Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer.toString());*/
-
+        Computer computer = context.getBean("computer", Computer.class);
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer.playMusic());
+        System.out.println(computer.getRandomGenreSongs());
+
+        /*MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         System.out.println(musicPlayer.getName());
         System.out.println(musicPlayer.getVolume());
 
         ClassicalMusic classicalMusic1 = context.getBean("classicalMusic", ClassicalMusic.class);
         ClassicalMusic classicalMusic2 = context.getBean("classicalMusic", ClassicalMusic.class);
 
-        System.out.println(classicalMusic1 == classicalMusic2);
+        System.out.println(classicalMusic1 == classicalMusic2);*/
 
         context.close();
     }

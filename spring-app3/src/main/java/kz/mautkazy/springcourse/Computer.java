@@ -14,8 +14,7 @@ public class Computer {
         this.musicPlayer = musicPlayer;
     }
 
-    @Override
-    public String toString(){
-        return "Computer " + id + " " + musicPlayer.playMusic(MusicGenre.HipHop);
+    public String getRandomGenreSongs(){
+        return musicPlayer.playMusic();
     }
 }
